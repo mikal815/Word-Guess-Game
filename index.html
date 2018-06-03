@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Hangman</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/game.js" charset="utf-8"></script>
 </head>
 <body>
+    <h1>Hangman</h1>
+    <button id="gameReset">New Game</button>
+
+    <div id="placeholder-section">
+        <div> Current Word
+            <div id="placeholders">_ _ _ _ _</div>
+        </div>    
+        <div> Incorrect Letters Guessed
+                <div id="guessed-letters"></div>
+            </div>    
+    </div>    
+
+    <div> Number of Guesses Remaining:
+        <div id="guesses-left">0</div>
+    </div>
+
+    <div> Wins:
+            <div id="wins">0</div>
+    </div>
+
+    <div> Losses
+            <div id="losses">0</div>
+    </div>
     
 </body>
 </html>
