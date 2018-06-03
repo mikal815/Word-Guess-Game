@@ -27,7 +27,13 @@ function resetGame () {
     var guessesLeftElem = document.getElementById('guesses-left');
     guessesLeftElem.textContent = guessesRemaining;
 
-    document.getElementById("gameReset").onkeydown = resetGame ();
+    var placeholdersElem = document.getElementById('placeholders');
+    placeholdersElem.textContent = pickedWordUnderscores;
+
+    var guessedLettersElem = document.getElementById('guessed-letters');
+    guessedLettersElem.textContent = lettersGuessedWrong;
+
+    document.getElementById("gameReset").onkeydown = resetGame ();    
     
 };
 
