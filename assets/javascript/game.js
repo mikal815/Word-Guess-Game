@@ -61,9 +61,20 @@ function guessedWrong(letter) {
         guessedLettersElem.textContent = lettersGuessedWrong.join("");
         guessesLeftElem.textContent = guessesRemaining;
     }
-    
+    gameOver();
 }
 
+function gameOver () {
+    if (guessesRemaining === 0) {
+        gameRunning = false;
+        losses++
+        lossesElem.textContent = losses;
+    }
+}
+
+function win () {
+    
+}
 
 resetGameButtonElem.addEventListener("click", resetGame);
 
