@@ -49,19 +49,27 @@ function guessLetter(letter) {
                 pickedWordUnderscores[i] = letter;
             }
         }
-                                                    
+
     placeholdersElem.textContent = pickedWordUnderscores.join("");
-        
+    guessedWrong(letter);    
+}
+
+function guessedWrong(letter) {
+    if (pickedWordUnderscores.indexOf(letter) === -1) {
+        guessesRemaining--;
+        lettersGuessedWrong.push(letter);
+        guessedLettersElem.textContent = lettersGuessedWrong.join("");
+        guessesLeftElem.textContent = guessesRemaining;
+    }
+    
 }
 
 
 resetGameButtonElem.addEventListener("click", resetGame);
 
 document.onkeyup = function(event) {
-    console.log(event);
-    if (event.keyCode >=65 && event.keyCode <= 90) {
-        guessLetter(event.key);
-    }
+    
+    guessLetter(event.key);
 }
 
 
