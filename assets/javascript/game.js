@@ -70,10 +70,15 @@ function gameOver () {
         losses++
         lossesElem.textContent = losses;
     }
+    win();
 }
 
 function win () {
-    
+    if (pickedWord === pickedWordUnderscores.join("")) {
+        gameRunning = false;
+        wins++;
+        winsElem.textContent = wins;
+    }
 }
 
 resetGameButtonElem.addEventListener("click", resetGame);
