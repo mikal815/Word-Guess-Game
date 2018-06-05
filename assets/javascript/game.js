@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', function(){
-      
+        
+var guessesLeftElem = document.getElementById('guesses-left');
+var placeholdersElem = document.getElementById('placeholders');
+var guessedLettersElem = document.getElementById('guessed-letters');
+var resetGameButtonElem = document.getElementById('start');  
+var winsElem = document.getElementById('wins');
+var lossesElem = document.getElementById('losses');  
+
 //Variables
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 12;
 var gameRunning = false;
 var words = ['strawberry', 'chocolate', 'mint', 'vanilla', 'pistachio'];
-var pickedWord = "";
+var pickedWord = '';
 var pickedWordUnderscores = [];
 var lettersGuessedCorrect = [];
 var lettersGuessedWrong = [];
@@ -18,27 +25,26 @@ function resetGame () {
     lettersGuessedCorrect = [];
     lettersGuessedWrong = [];
     pickedWordUnderscores = [];
-    pickedWord = words[Math.floor(Math.random() + words.length)];
+    pickedWord = words[Math.floor(Math.random() * (words.length))];
     
     for (var i = 0; i < pickedWord.length; i++) {
         pickedWordUnderscores.push("_");
     }
 
-    var guessesLeftElem = document.getElementById('guesses-left');
+    
     guessesLeftElem.textContent = guessesRemaining;
+    placeholdersElem.textContent = pickedWordUnderscores.join("");
+    // guessedLettersElem.textContent = lettersGuessedWrong;
+    // document.getElementById("start").onkeydown = resetGame ();
+    
+    
+   
 
-    var placeholdersElem = document.getElementById('placeholders');
-    placeholdersElem.textContent = pickedWordUnderscores;
-
-    var guessedLettersElem = document.getElementById('guessed-letters');
-    guessedLettersElem.textContent = lettersGuessedWrong;
-
-    document.getElementById("gameReset").onkeydown = resetGame ();    
     
 };
 
 
-
+resetGameButtonElem.addEventListener("click", resetGame);
 
 
 
