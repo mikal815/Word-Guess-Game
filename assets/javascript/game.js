@@ -34,19 +34,35 @@ function resetGame () {
     
     guessesLeftElem.textContent = guessesRemaining;
     placeholdersElem.textContent = pickedWordUnderscores.join("");
-    // guessedLettersElem.textContent = lettersGuessedWrong;
+    guessedLettersElem.textContent = lettersGuessedWrong;
     // document.getElementById("start").onkeydown = resetGame ();
     
-    
-   
-
-    
 };
+
+function guessLetter(letter) {
+    
+    lettersGuessedCorrect.push(letter);
+        
+
+        for (var i = 0; i < pickedWord.length; i++) {
+            if (pickedWord[i] === letter) {
+                pickedWordUnderscores[i] = letter;
+            }
+        }
+                                                    
+    placeholdersElem.textContent = pickedWordUnderscores.join("");
+        
+}
 
 
 resetGameButtonElem.addEventListener("click", resetGame);
 
-
+document.onkeyup = function(event) {
+    console.log(event);
+    if (event.keyCode >=65 && event.keyCode <= 90) {
+        guessLetter(event.key);
+    }
+}
 
 
 
