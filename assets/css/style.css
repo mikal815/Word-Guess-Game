@@ -1,5 +1,6 @@
-* {
-    background-color: blanchedalmond;
+
+body {
+    background-image: url(../images/iceCream.jpg);
 }
 
 h1 {
@@ -19,6 +20,8 @@ div {
 }
 
 #start {
+    font-size: 25px;
+    margin: 0 auto;
     color: red;
 }
 

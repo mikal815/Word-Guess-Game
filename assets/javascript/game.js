@@ -12,7 +12,7 @@ var wins = 0;
 var losses = 0;
 var guessesRemaining = 12;
 var gameRunning = false;
-var words = ['strawberry', 'chocolate', 'mint', 'vanilla', 'pistachio'];
+var words = ['strawberry', 'chocolate', 'mint', 'vanilla', 'pistachio', 'cherry', 'mango', 'neapolitan', 'coconut'];
 var pickedWord = '';
 var pickedWordUnderscores = [];
 var lettersGuessedCorrect = [];
@@ -26,6 +26,7 @@ function resetGame () {
     lettersGuessedWrong = [];
     pickedWordUnderscores = [];
     pickedWord = words[Math.floor(Math.random() * (words.length))];
+    // pickedWord = words[Math.floor(Math.random() * words.length)];
     
     for (var i = 0; i < pickedWord.length; i++) {
         pickedWordUnderscores.push("_");
